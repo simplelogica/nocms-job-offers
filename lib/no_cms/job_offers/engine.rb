@@ -1,4 +1,6 @@
 require 'globalize'
+require 'friendly_id'
+require "friendly_id/globalize"
 
 module NoCms
   module JobOffers
