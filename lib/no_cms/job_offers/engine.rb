@@ -1,3 +1,5 @@
+require 'globalize'
+
 module NoCms
   module JobOffers
     class Engine < ::Rails::Engine
