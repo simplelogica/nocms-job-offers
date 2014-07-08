@@ -26,4 +26,21 @@ describe NoCms::JobOffers::JobOffer do
 
   end
 
+  context "when visiting a job offer page" do
+
+    let(:job_offer) { create :nocms_job_offers_job_offer }
+
+    before do
+      job_offer.save!
+      visit no_cms_job_offers.job_offer_path job_offer
+    end
+
+    it("should find the page") { expect(page.status_code).to eq 200 }
+    it("should display the news item") do
+      expect(page).to have_selector('h1', text: job_offer.title)
+      expect(page).to have_content(job_offer.description)
+    end
+
+  end
+
 end
