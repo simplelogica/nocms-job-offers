@@ -4,6 +4,7 @@
     <li>
       <h2><%= job_offer.title %></h2>
       <%= raw job_offer.description %>
+      <%= link_to t('.read_more', title: job_offer.title), job_offer_path(job_offer) %>
     </li>
   <% end -%>
 </ul>

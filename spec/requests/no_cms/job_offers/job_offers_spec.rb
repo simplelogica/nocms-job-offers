@@ -18,6 +18,12 @@ describe NoCms::JobOffers::JobOffer do
       end
     end
 
+    it("should link to job offers pages") do
+      job_offers.each do |job_offer|
+        expect(page).to have_selector "a[href='#{no_cms_job_offers.job_offer_path(job_offer)}']"
+      end
+    end
+
   end
 
 end
