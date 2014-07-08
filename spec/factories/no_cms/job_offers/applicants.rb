@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :nocms_job_offers_applicant, class: NoCms::JobOffers::Applicant do
-    name { Faker::Name.full_name }
+    name { Faker::Name.name }
     position { Faker::Company.name }
     message { Faker::Lorem.paragraph }
   end
