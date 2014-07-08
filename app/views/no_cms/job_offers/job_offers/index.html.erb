@@ -1,0 +1,9 @@
+<h1><%= t '.job_offers_title' %></h1>
+<ul>
+  <% @job_offers.each do |job_offer| %>
+    <li>
+      <h2><%= job_offer.title %></h2>
+      <%= raw job_offer.description %>
+    </li>
+  <% end -%>
+</ul>
