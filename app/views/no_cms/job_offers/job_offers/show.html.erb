@@ -1,2 +1,4 @@
 <h1><%= @job_offer.title %></h1>
 <%= raw @job_offer.description %>
+
+<%= render 'no_cms/job_offers/applicants/form', job_offer: @job_offer, applicant: @applicant if @applicant.new_record? %>

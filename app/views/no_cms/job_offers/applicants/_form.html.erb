@@ -1,0 +1,17 @@
+<%= form_for [ job_offer, applicant] do |f| %>
+  <div class="row">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="row">
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+  </div>
+  <div class="row">
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+  </div>
+
+  <%= f.submit t('.submit') %>
+
+<% end %>
