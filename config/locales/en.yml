@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    attributes:
+      no_cms/job_offers/applicant:
+        message: Message
+        name: Name
+        position: Last position
+  no_cms:
+    job_offers:
+      applicants:
+        form:
+          submit: Apply for the job
