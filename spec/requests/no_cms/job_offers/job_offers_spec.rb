@@ -41,6 +41,25 @@ describe NoCms::JobOffers::JobOffer do
       expect(page).to have_content(job_offer.description)
     end
 
+    context "when submitting an application" do
+
+      before do
+
+        fill_in I18n.t('activerecord.attributes.no_cms/job_offers/applicant.name'), with: Faker::Name.name
+        fill_in I18n.t('activerecord.attributes.no_cms/job_offers/applicant.position'), with: Faker::Company.name
+        fill_in I18n.t('activerecord.attributes.no_cms/job_offers/applicant.message'), with: Faker::Lorem.paragraph
+
+        click_button I18n.t('no_cms.job_offers.applicants.form.submit')
+      end
+
+      it "should create the application" do
+        expect(job_offer.applicants.count).to eq 1
+      end
+
+
+
+    end
+
   end
 
 end
