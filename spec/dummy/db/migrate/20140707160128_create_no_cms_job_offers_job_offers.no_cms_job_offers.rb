@@ -10,7 +10,7 @@ class CreateNoCmsJobOffersJobOffers < ActiveRecord::Migration
 
       t.string :locale
       t.string :title
-      t.string :description
+      t.text :description
     end
   end
 end

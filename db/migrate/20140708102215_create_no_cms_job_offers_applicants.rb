@@ -3,7 +3,7 @@ class CreateNoCmsJobOffersApplicants < ActiveRecord::Migration
     create_table :no_cms_job_offers_applicants do |t|
       t.string :name
       t.string :position
-      t.string :message
+      t.text :message
 
       t.timestamps
     end
