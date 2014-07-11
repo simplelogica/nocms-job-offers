@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708105007) do
+ActiveRecord::Schema.define(version: 20140711122625) do
 
   create_table "no_cms_job_offers_applicants", force: true do |t|
     t.string   "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140708105007) do
     t.string  "title"
     t.string  "description"
     t.string  "slug"
+    t.boolean "draft",                          default: false
   end
 
   add_index "no_cms_job_offers_job_offer_translations", ["no_cms_job_offers_job_offer_id"], name: "index_no_cms_job_offer_translations_on_offer_id"
