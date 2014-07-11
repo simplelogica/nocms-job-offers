@@ -7,14 +7,14 @@ require "no_cms/job_offers/version"
 Gem::Specification.new do |s|
   s.name        = "nocms-job-offers"
   s.version     = NoCms::JobOffers::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of NoCms::JobOffers."
-  s.description = "TODO: Description of NoCms::JobOffers."
+  s.authors     = ["Simplelogica"]
+  s.email       = ["gems@simplelogica.net"]
+  s.homepage    = "https://github.com/simplelogica/nocms-pages"
+  s.summary     = "Gem with job offers functionality independent from any CMS and embeddable in any Rails 4 app"
+  s.description = "Gem with job offers functionality independent from any CMS and embeddable in any Rails 4 app"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", '~> 4.0', '>= 4.0.0'
   s.add_dependency "globalize", '~> 4.0', '>= 4.0.0'
