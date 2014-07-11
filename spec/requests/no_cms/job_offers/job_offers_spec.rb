@@ -33,6 +33,18 @@ describe NoCms::JobOffers::JobOffer do
 
   end
 
+  context "when visiting a draft job offer page" do
+
+    let(:job_offer) { create :nocms_job_offers_job_offer, draft: true }
+
+    before do
+      job_offer.save!
+
+    end
+    it("should not find the page") { expect{visit no_cms_job_offers.job_offer_path job_offer}.to raise_error }
+
+  end
+
   context "when visiting a job offer page" do
 
     let(:job_offer) { create :nocms_job_offers_job_offer }

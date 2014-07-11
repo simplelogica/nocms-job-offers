@@ -5,7 +5,7 @@ module NoCms::JobOffers
     end
 
     def show
-      @job_offer = NoCms::JobOffers::JobOffer.includes(:translations).friendly.find params[:id]
+      @job_offer = NoCms::JobOffers::JobOffer.no_drafts.includes(:translations).friendly.find params[:id]
       @applicant = @job_offer.applicants.build
     end
   end
