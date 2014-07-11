@@ -1,7 +1,7 @@
 module NoCms::JobOffers
   class JobOffersController < ApplicationController
     def index
-      @job_offers = NoCms::JobOffers::JobOffer.includes(:translations).all
+      @job_offers = NoCms::JobOffers::JobOffer.no_drafts.includes(:translations).all
     end
 
     def show

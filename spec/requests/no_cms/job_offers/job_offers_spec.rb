@@ -5,9 +5,11 @@ describe NoCms::JobOffers::JobOffer do
   context "when visiting job offers index" do
 
     let(:job_offers) { create_list :nocms_job_offers_job_offer, 3 }
+    let(:draft_job_offers) { create_list :nocms_job_offers_job_offer, 3, draft: true }
 
     before do
       job_offers.each(&:save!)
+      draft_job_offers.each(&:save!)
       visit no_cms_job_offers.job_offers_path
     end
 
@@ -15,6 +17,11 @@ describe NoCms::JobOffers::JobOffer do
     it("should display job offers") do
       job_offers.each do |job_offer|
         expect(page).to have_selector('li', text: job_offer.title)
+      end
+    end
+    it("should not display draft job offers") do
+      draft_job_offers.each do |job_offer|
+        expect(page).to_not have_selector('li', text: job_offer.title)
       end
     end
 
