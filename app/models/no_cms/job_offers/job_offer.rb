@@ -1,7 +1,7 @@
 module NoCms::JobOffers
   class JobOffer < ActiveRecord::Base
 
-    translates :title, :description, :slug
+    translates :title, :description, :slug, :draft
 
     extend FriendlyId
     friendly_id :title, use: [:globalize]
